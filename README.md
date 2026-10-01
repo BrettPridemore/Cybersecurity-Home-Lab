@@ -27,13 +27,23 @@ The environment consists of two physical Windows systems with dedicated roles.
 | **Macbook Pro** | Monitoring & Response Host | Network monitoring, packet analysis, log review, incident response, and documentation |
 
 ```mermaid
-graph TD;
-  'SIEM'<-->'Virtualization Host';
-  'Virtualization Host'-->'Kali VM';
-  'Kali VM'<-->'IDS/IPS VM';
-  'Virtualization Host'-->'IDS/IPS VM';
-  'IDS/IPS VM'<-->'Metasploitable VM';
-  'Virtualization Host'-->'Metasploitable VM';
+graph TD
+ 
+HOST["Virtualization Host"]
+ 
+SIEM["Wazuh SIEM"]
+KALI["Kali Linux VM"]
+IDS["Suricata IDS/IPS VM"]
+META["Metasploitable VM"]
+ 
+HOST --> SIEM
+HOST --> KALI
+HOST --> IDS
+HOST --> META
+ 
+SIEM <--> IDS
+KALI <--> IDS
+IDS <--> META
 ```
 
 ### Virtualized Systems
