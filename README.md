@@ -31,19 +31,22 @@ graph LR
  
 SIEM["Wazuh SIEM"]
  
-HOST["Virtualization Host"]
- 
-subgraph "Isolated Lab Network"
+subgraph HOST["Virtualization Host"]
+subgraph LAB["Isolated Lab Network"]
 KALI["Kali Linux VM"]
-IDS["Suricata IDS VM"]
 META["Metasploitable VM"]
- 
-KALI --> IDS
-IDS --> META
 end
  
-IDS -->|Alerts & Traffic Metadata| SIEM
-HOST -->|Host Logs| SIEM
+IDS["Suricata IDS VM"]
+ 
+KALI <--> META
+ 
+KALI -. Mirrored Traffic .-> IDS
+META -. Mirrored Traffic .-> IDS
+end
+ 
+IDS -->|EVE Logs & Alerts| SIEM
+HOST -->|System Logs| SIEM
 ```
 
 ### Virtualized Systems
