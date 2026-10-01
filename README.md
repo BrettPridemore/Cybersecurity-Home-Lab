@@ -28,12 +28,12 @@ The environment consists of two physical Windows systems with dedicated roles.
 
 ```mermaid
 graph TD;
-  SIEM<-->Virtualization Host;
-  Virtualization Host-->Kali VM;
-  Kali VM<-->IDS/IPS VM;
-  Virtualization Host-->IDS/IPS VM;
-  IDS/IPS VM<-->Metasploitable VM;
-  Virtualization Host-->Metasploitable VM;
+  'SIEM'<-->'Virtualization Host';
+  'Virtualization Host'-->'Kali VM';
+  'Kali VM'<-->'IDS/IPS VM';
+  'Virtualization Host'-->'IDS/IPS VM';
+  'IDS/IPS VM'<-->'Metasploitable VM';
+  'Virtualization Host'-->'Metasploitable VM';
 ```
 
 ### Virtualized Systems
