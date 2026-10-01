@@ -26,7 +26,7 @@ The environment consists of two physical Windows systems with dedicated roles.
 | System | Role | Primary Use |
 |----------|----------|----------|
 | **Windows 11 Desktop** | Virtualization Host | Attack platform, victim systems, malware-analysis VMs, and security testing |
-| **Windows 11 Laptop** | Monitoring & Response Host | Network monitoring, packet analysis, log review, incident response, and documentation |
+| **Macbook Pro** | Monitoring & Response Host | Network monitoring, packet analysis, log review, incident response, and documentation |
 
 ### Virtualized Systems
 
