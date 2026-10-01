@@ -33,21 +33,17 @@ SIEM["Wazuh SIEM"]
  
 HOST["Virtualization Host"]
  
-subgraph "Home Lab Environment"
+subgraph "Isolated Lab Network"
 KALI["Kali Linux VM"]
-IDS["Suricata IDS/IPS VM"]
+IDS["Suricata IDS VM"]
 META["Metasploitable VM"]
+ 
+KALI --> IDS
+IDS --> META
 end
  
-HOST --> KALI
-HOST --> IDS
-HOST --> META
- 
-KALI <-- Attack Traffic --> META
-IDS <-- Monitors --> META
- 
+IDS -->|Alerts & Traffic Metadata| SIEM
 HOST -->|Host Logs| SIEM
-IDS -->|Security Alerts| SIEM
 ```
 
 ### Virtualized Systems
