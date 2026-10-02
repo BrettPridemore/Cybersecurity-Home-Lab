@@ -23,7 +23,7 @@ The environment consists of two physical systems with dedicated roles.
 
 | System | Role | Primary Use |
 |----------|----------|----------|
-| **Windows 11 Desktop** | Virtualization Host | Attack platform, victim systems, malware-analysis VMs, and security testing |
+| **Windows 11 Desktop** | Virtualization Host | Attack platform, victim systems, and security testing |
 | **Macbook Pro** | Monitoring & Response Host | Network monitoring, packet analysis, log review, incident response, and documentation |
 
 ```mermaid
@@ -35,9 +35,9 @@ subgraph HOST["Virtualization Host"]
 subgraph LAB["Isolated Lab Network"]
 KALI["Kali Linux VM"]
 META["Metasploitable VM"]
-IDS["Suricata IDS VM"]
+
 end
- 
+IDS["Suricata IDS VM"]
 
  
 KALI <--> META
