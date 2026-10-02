@@ -35,9 +35,10 @@ subgraph HOST["Virtualization Host"]
 subgraph LAB["Isolated Lab Network"]
 KALI["Kali Linux VM"]
 META["Metasploitable VM"]
+IDS["Suricata IDS VM"]
 end
  
-IDS["Suricata IDS VM"]
+
  
 KALI <--> META
  
