@@ -19,7 +19,7 @@ This lab provides a controlled environment for building, testing, analyzing, and
 
 ## Lab Architecture
 
-The environment consists of two physical Windows systems with dedicated roles.
+The environment consists of two physical systems with dedicated roles.
 
 | System | Role | Primary Use |
 |----------|----------|----------|
@@ -45,7 +45,7 @@ KALI -. Mirrored Traffic .-> IDS
 META -. Mirrored Traffic .-> IDS
 end
  
-IDS -->|EVE Logs & Alerts| SIEM
+IDS -->|Logs & Alerts| SIEM
 HOST -->|System Logs| SIEM
 ```
 
