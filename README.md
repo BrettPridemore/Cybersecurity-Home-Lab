@@ -1,30 +1,19 @@
 # Cybersecurity Home Lab
 
-An isolated, two-host cybersecurity home lab designed to develop hands-on experience in network security, vulnerability assessment, penetration testing, threat detection, and incident response.
-
-This lab provides a controlled environment for building, testing, analyzing, and investigating systems, software, and security events while documenting progress through practical projects.
-
----
-
-## Objectives
-
-- Network Security
-- Vulnerability Assessment
-- Penetration Testing
-- Threat Detection
-- Incident Response
-- Security Automation
+## About
+This repository documents the design, implementation, and operation of my cybersecurity home lab. 
+The lab provides a controlled environment for learning, testing, and validating cybersecurity concepts including network monitoring, intrusion detection, threat analysis, and system hardening.
 
 ---
-
-## Lab Architecture
-
-The environment consists of two physical systems with dedicated roles.
-
-| System | Role | Primary Use |
-|----------|----------|----------|
-| **Windows 11 Desktop** | Virtualization Host | Attack platform, victim systems, and security testing |
-| **Macbook Pro** | Monitoring & Response Host | Network monitoring, packet analysis, log review, incident response, and documentation |
+## Lab Environment
+- Virtualization Host
+  - VMware
+    -   Kali Linux VM
+    -   Metasploitable VM
+    -   Ubuntu IDS VM
+- Monitoring and Response Host
+  - Docker Container
+    - Wazuh SIEM 
 
 ```mermaid
 graph LR
@@ -49,61 +38,25 @@ end
 IDS -->|Logs & Alerts| SIEM
 HOST -->|System Logs| SIEM
 ```
-
-### Virtualized Systems
-
-- Kali Linux
-- Metasploitable 2
-- Ubuntu Linux
 ---
-
-## Tools
-- Wireshark
-- Nmap
-- Zeek
-- Suricata
-
-### Development & Automation
-- Python
-- PowerShell
-- Bash
-
-### Operating Systems
-- Windows 11
-- Kali Linux
-- Ubuntu Linux
-- Metasploitable 2
 ---
+## Labs
 
-## Skills Developed
-
-| Domain | Skills |
-|---------|---------|
-| Networking | TCP/IP, DNS, HTTP/S, Routing, Packet Analysis |
-| Operating Systems | Windows, Linux, MacOS  |
-| Blue Team | Threat Detection, Log Analysis, Incident Response |
-| Red Team | Enumeration, Scanning, Exploitation |
-| Programming | Python, PowerShell, Bash |
-
+| Lab | Topic | Skills | Status |
+|------|------|------|------|
+| [Lab 01 - Initial Build](./Lab01-Initial-Build/) | Nmap Host Discovery | Nmap, Enumeration | ✅ Complete |
+| [Lab 02 - Placeholder](./Lab02-Placeholder/) | Placeholder | Placeholder | 📚 In Progress |
+| [Lab 03 - Placeholder](./Lab03-Placeholder/) | Placeholder | Placeholder | 📚 In Progress |
 ---
-
-## Learning Focus
-
-### Defensive Security
-- Packet Capture Analysis
+## Skills Demonstrated
+- Network Reconnaissance
+- Threat Detection and Response
+- SIEM Administration
+- IDS/IPS Monitoring
+- Linux Administration
+- Incident Investigation
 - Log Analysis
-- Threat Detection
-- Security Monitoring
-- Incident Response
-
-### Offensive Security
-- Vulnerability Scanning
-- Exploitation Fundamentals
-- Post-Exploitation Concepts
-- Privilege Escalation
-
 ---
-
 ## Documentation
 
 Each project will include:
@@ -114,3 +67,6 @@ Each project will include:
 - Lessons Learned
 - Screenshots
 ---
+## Other Repositories
+- [Homepage](https://github.com/BrettPridemore/)
+- [Certifications](https://github.com/BrettPridemore/Certifications)
