@@ -54,7 +54,6 @@ HOST -->|System Logs| SIEM
 
 - Kali Linux
 - Metasploitable 2
-- Windows 10/11 Test VMs
 - Ubuntu Linux
 ---
 
@@ -104,32 +103,14 @@ HOST -->|System Logs| SIEM
 - Privilege Escalation
 
 ---
-### Defensive Security
-
-- [ ] Network Packet Investigations
-- [ ] Windows Event Log Analysis
-- [ ] Incident Response Exercises
-- [ ] Threat Hunting
-
-### Offensive Security
-
-- [ ] Vulnerability Assessments
-- [ ] Penetration Testing Labs
-- [ ] Security Automation & Scripting
-
----
 
 ## Documentation
 
 Each project will include:
 
 - Objectives
-- Environment Setup
-- Methodology
 - Tools Used
 - Findings
 - Lessons Learned
 - Screenshots
-- References
-
 ---
