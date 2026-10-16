@@ -44,7 +44,7 @@ HOST -->|System Logs| SIEM
 
 | Lab | Topic | Skills | Status |
 |------|------|------|------|
-| [Lab 01 - Initial Build](https://github.com/BrettPridemore/Cybersecurity-Home-Lab/tree/Lab01---Initial-Setup) | Nmap Host Discovery | Nmap, Enumeration | ✅ Complete |
+| [Lab 01 - Initial Build](https://github.com/BrettPridemore/Cybersecurity-Home-Lab/tree/Lab01-Initial-Setup) | Nmap Host Discovery | Nmap, Enumeration | ✅ Complete |
 | [Lab 02 - Placeholder](./Lab02-Placeholder/) | Placeholder | Placeholder | 📚 In Progress |
 | [Lab 03 - Placeholder](./Lab03-Placeholder/) | Placeholder | Placeholder | 📚 In Progress |
 ---
