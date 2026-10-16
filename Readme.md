@@ -3,9 +3,11 @@
 ## Objectives
 
 - Deploy VMware Workstation Pro
-- Create Kali Linux VM
-- Create Metasploitable VM
-- Configure isolated networking
+- Create Kali Linux VM to produce attacks
+- Create Metasploitable VM to act as victim
+- Create IDS VM to detect malicious traffic and transmit to SIEM
+- Create SIEM to gather traffic and centralize information
+- Configure isolated network
 - Validate VM connectivity
 
 ## Completed Tasks
@@ -13,6 +15,8 @@
 - [x] Installed VMware Workstation Pro
 - [x] Downloaded and deployed Kali Linux VM
 - [x] Downloaded and deployed Metasploitable VM
+- [x] Downloaded and deployed Ubuntu and install Suricata and Zeek
+- [x] Downloaded and deployed Docker container with Wazuh to act as SIEM
 - [x] Configured Host-Only Network
 - [x] Tested VM Connectivity
 
