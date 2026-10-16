@@ -1,6 +1,8 @@
 # Lab 01: Initial Setup (Isolated Network, IDS Sensor and SIEM)
 **Status:** Complete through SIEM dashboard. Agent forwarding and attack testing continue and Lab02.
+
 **Build dates:** September 2026
+
 **Last updated:** October 16, 2026
 
 ---
