@@ -10,7 +10,7 @@
 This lab builds the foundation of a home Security Operations Senter (SOC): an isolated attack/target network, a dedicated sensor to monitor traffic, and a SIEM that collects and displays everything.
 By the end of Lab01:
 - Kali (Attack machine) and Metasploitable (Target machine) talk to each other on isolated network.
-- Third VM (IDS Sensor) passively captures traffic and analyzes it with Suricata (alerting) and Zeek (connection logging)
+- IDS Sensor passively captures traffic and analyzes it with Suricata (alerting) and Zeek (connection logging)
 - Wazuh (SIEM) runs on Docker on separate machine with dashboard accessible to view logs and alerts.
 
 ---
