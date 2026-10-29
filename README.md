@@ -1,72 +1,43 @@
-# Cybersecurity Home Lab
+# Lab 02: Attack and Detect — Recon and Brute Force vs. Suricata, Zeek, and Wazuh
+**Status:** In Progress
 
-## About
-This repository documents the design, implementation, and operation of my cybersecurity home lab. 
-The lab provides a controlled environment for learning, testing, and validating cybersecurity concepts including network monitoring, intrusion detection, threat analysis, and system hardening.
+**Build dates:** October 2026
+
+**Last updated:** October 29, 2026
 
 ---
-## Lab Environment
-- Virtualization Host
-  - VMware
-    -   Kali Linux VM
-    -   Metasploitable VM
-    -   Ubuntu IDS VM
-- Monitoring and Response Host
-  - Docker Container
-    - Wazuh SIEM 
+## 1. Summary
+Using the SIEM pipeline built in Lab 01, I run reconnaissance and brute-force attacks from Kali against Metasploitable on an isolated segment, then document what Suricata, Zeek, and Wazuh each detected, and what they missed.
 
-```mermaid
-graph LR
- 
-SIEM["Wazuh SIEM"]
- 
-subgraph HOST["Virtualization Host"]
-subgraph LAB["Isolated Lab Network"]
-KALI["Kali Linux VM"]
-META["Metasploitable VM"]
-
-end
-IDS["Suricata IDS VM"]
-
- 
-KALI <--> META
- 
-KALI -. Mirrored Traffic .-> IDS
-META -. Mirrored Traffic .-> IDS
-end
- 
-IDS -->|Logs & Alerts| SIEM
-HOST -->|System Logs| SIEM
-```
 ---
----
-## Labs
+## 2. Objectives
+| # | Objective | Result |
+|---|-----------|--------|
+| 1 | Run nmap recon scans from Kali ||
+| 2 | Run SSH and FTP brute-force attempts against Metasploitable ||
+| 3 | Capture and compare detections ||
+| 4 | Perform a gap analysis on security posture ||
+| 5 | Summarize findings and recommend mitigations ||
 
-| Lab | Topic | Skills | Status |
-|------|------|------|------|
-| [Lab 01 - Initial Build](https://github.com/BrettPridemore/Cybersecurity-Home-Lab/tree/Lab01-Initial-Setup) | Nmap Host Discovery | Nmap, Enumeration | ✅ Complete |
-| [Lab 02 - Placeholder](./Lab02-Placeholder/) | Placeholder | Placeholder | 📚 In Progress |
-| [Lab 03 - Placeholder](./Lab03-Placeholder/) | Placeholder | Placeholder | 📚 In Progress |
 ---
-## Skills Demonstrated
-- Network Reconnaissance
-- Threat Detection and Response
-- SIEM Administration
-- IDS/IPS Monitoring
-- Linux Administration
-- Incident Investigation
-- Log Analysis
----
-## Documentation
+## Scenarios
+### 1: Network reconnaissance (Nmap)
 
-Each project will include:
 
-- Objectives
-- Tools Used
-- Findings
-- Lessons Learned
-- Screenshots
+### 2: SSH Attempt
+
+
+### 3: FTP Attempt
+
+
 ---
-## Other Repositories
-- [Homepage](https://github.com/BrettPridemore/)
-- [Certifications](https://github.com/BrettPridemore/Certifications)
+## 3. Results
+
+
+
+---
+## 4. Analysis
+
+
+---
+## 5. Summary
