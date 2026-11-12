@@ -44,9 +44,9 @@ HOST -->|System Logs| SIEM
 
 | Lab | Topic | Skills | Status |
 |------|------|------|------|
-| [Lab 01 - Initial Build](https://github.com/BrettPridemore/Cybersecurity-Home-Lab/tree/Lab01-Initial-Setup) | Nmap Host Discovery | Nmap, Enumeration | ✅ Complete |
-| [Lab 02 - Placeholder](./Lab02-Placeholder/) | Placeholder | Placeholder | 📚 In Progress |
-| [Lab 03 - Placeholder](./Lab03-Placeholder/) | Placeholder | Placeholder | 📚 In Progress |
+| [Lab 01 - Initial Build](https://github.com/BrettPridemore/Cybersecurity-Home-Lab/tree/Lab01-Initial-Setup) | Initial setup of home lab | VMware, networking, SIEM setup, IDS/IPS setup | ✅ Complete |
+| [Lab 02 - Attacks and Detection](https://github.com/BrettPridemore/Cybersecurity-Home-Lab/tree/Lab02-Attack-And-Detect) | Nmap recon and SSH/FTP brute force | Alert Triage, log analysis, MITRE ATT&CK | 📚 In Progress |
+| [Lab 03 - Mitigations and Tuning](https://github.com/BrettPridemore/Cybersecurity-Home-Lab/tree/Lab03-Applying-Mitigations-and-Tuning) | Mitigations and Tuning | Detection engineering | 📚 Planned |
 ---
 ## Skills Demonstrated
 - Network Reconnaissance
