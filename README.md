@@ -40,7 +40,7 @@ graph LR
     SIEM["Wazuh SIEM<br/>(Docker)"]
   end
   LAB -. passive capture .-> SENSOR
-  SENSOR -->|"logs and alerts (Lab 02)"| SIEM
+  SENSOR -->|"logs and alerts"| SIEM
 ```
 
 <!-- Add a screenshot of the Wazuh dashboard here, for example:
