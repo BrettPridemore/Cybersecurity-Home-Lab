@@ -128,7 +128,7 @@ The attack found the valid password (`msfadmin`) on the last attempt.
 **MITRE ATT&CK:** T1110.001 Brute Force: Password Guessing
 
 **What I did:**
-Same 51-password list as the SSH test, this time against FTP. Hydra worked directly here — FTP has no encrypted handshake, so none of the SSH crypto problems applied.
+Same 51-password list as the SSH test, this time against FTP.
 
 ```bash
 date
@@ -220,11 +220,9 @@ alert tcp $EXTERNAL_NET any -> $HOME_NET 22 (... threshold: count 5, seconds 120
 
 They only fire for traffic from `$EXTERNAL_NET` (outside) into `$HOME_NET` (what you're protecting). In Lab 01 I set `HOME_NET` to `10.10.10.0/24`, which covers **both** Kali and Metasploitable. So Suricata saw the attack as inside → inside, and the rule's direction never matched. The threshold (5 attempts in 120 seconds) was met easily; direction was the only thing wrong.
 
-**Proof:** I narrowed `HOME_NET` to just the target (`10.10.10.20/32`) so Kali became "external," restarted Suricata, and re-ran the FTP brute force. This time it alerted — *ET SCAN Potential FTP Brute-Force attempt response* (8 alerts). SSH is caught now too. Nothing about the attack changed, only which side of the boundary the attacker sat on.
+**The fix:** I changed `HOME_NET` to just the target (`10.10.10.20/32`) so Kali became "external," restarted Suricata, and re-ran the FTP brute force. This time it alerted — *ET SCAN Potential FTP Brute-Force attempt response* (8 alerts). SSH traffic was caught now too. 
 
-**The lesson:** default IDS rules are written assuming threats come from outside. An attacker already inside the trusted network — which is most lateral movement in a real breach — slips straight past them. That's a detection gap to design around, not just a config typo.
-
-This is the gap Lab 03 addresses: tune `HOME_NET` to reflect what's actually being defended, and write custom Wazuh rules that turn these patterns (many `REJ` connections = scan; many SSH sessions or FTP `530`s from one source = brute force) into real, prioritized alerts instead of flat level-3 noise.
+**The lesson:** default IDS rules are written assuming threats come from outside. An attacker already inside the trusted network is not flagged.
 
 ---
 
@@ -232,9 +230,8 @@ This is the gap Lab 03 addresses: tune `HOME_NET` to reflect what's actually bei
 | Problem | Cause | Fix |
 |---------|-------|-----|
 | Events from a scan didn't appear in Wazuh | The Wazuh agent lost track of the log files after an hourly Zeek rotation and a reboot | Restarted `wazuh-agent`; reran the attack so new log lines were captured live |
-| Hydra couldn't connect to SSH (`kex error: no match for method mac algo`) | Metasploitable's 2009 SSH server only offers legacy crypto that modern Kali has removed | Brute-forced with Kali's own `ssh` client instead, re-enabling the old algorithms in `~/.ssh/config` |
-| `sshpass` wouldn't install (`Unable to locate package`) | Kali is on the isolated lab network with no internet to reach package repos | Used SSH's built-in `SSH_ASKPASS` to feed passwords, no install needed |
-| Dashboard timestamps were an hour off | Mac / Wazuh time-zone mismatch | Confirmed the Mac's time zone so dashboard times matched Kali |
+| Hydra couldn't connect to SSH | Metasploitable's 2009 SSH server only offers legacy crypto that modern Kali has removed | Brute-forced with Kali's own `ssh` client instead, re-enabling the old algorithms in `~/.ssh/config` |
+| Hydra SSH bypass would not work | Kali is on the isolated lab network with no internet to reach package repos | Used SSH's built-in `SSH_ASKPASS` to feed passwords, no install needed |
 
 ---
 
